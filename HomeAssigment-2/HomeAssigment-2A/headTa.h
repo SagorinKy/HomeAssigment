@@ -11,6 +11,7 @@ Home Assignment 2a */
 
 int GetFileSize(std::string filename);
 char* ReadFileInArray(std::string filename);
+void WriteFile(char* text, int n, std::string name);
 void ChangeDirrection(char* array, int n);
 
 #endif
