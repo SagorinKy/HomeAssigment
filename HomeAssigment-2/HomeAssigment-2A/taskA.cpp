@@ -2,8 +2,6 @@
 Home Assigment 2a */
 
 #include "headTa.h"
-#include <iostream>
-#include <string>
 
 int main()
 {
@@ -16,7 +14,7 @@ int main()
 	int n = GetFileSize(name);
 	ChangeDirrection(arr, n);
 
-	for(int i = 0; i < n; i++)
-		std::cout<<arr[i] << " ";
+	std::string outname =  "output.txt";
+	WriteFile(arr, n, outname);
 }
 
