@@ -1,0 +1,8 @@
+program: taskA.o headTa.o
+	g++ TaskA.o headTa.o -o program
+taskA.o: taskA.cpp headTa.h
+	g++ -c taskA.cpp
+headA.o: headA.cpp headTa.h
+	g++ -c headTa.cpp
+clean:
+	rm -r program *.o
