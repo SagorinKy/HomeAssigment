@@ -2,9 +2,6 @@
 Home Assignment 2a */
 
 #include "headTa.h"
-#include <iostream>
-#include <filesystem>
-#include <string>
 
 int GetFileSize(std::string filename)
 {
@@ -24,6 +21,13 @@ char* ReadFileInArray(std::string filename)
 	file.close();
 
 	return text;
+}
+
+void WriteFile(char* text, int size, std::string name)
+{
+	std::ofstream file(name, std::ios::out | std::ios::binary);
+	file.write(text, size);
+	file.close();
 }
 
 void ChangeDirrection(char* array, int size)
