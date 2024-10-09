@@ -1,8 +1,8 @@
 program: taskA.o headTa.o
-	g++ TaskA.o headTa.o -o program
+	g++ taskA.o headTa.o -o program
 taskA.o: taskA.cpp headTa.h
 	g++ -c taskA.cpp
-headA.o: headA.cpp headTa.h
-	g++ -c headTa.cpp
+headTa.o: headTa.cpp headTa.h
+	g++ -c headTa.cpp -std=c++17
 clean:
 	rm -r program *.o
