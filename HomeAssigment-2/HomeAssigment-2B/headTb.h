@@ -4,12 +4,10 @@
 
 int FileSize(std::string name);
 
-int CountInt(char* arr);
+int CountInt(char* arr, int* num);
 
-int GetInt(char* arr, int num);
-
-void InsertSring(char* arr);
+int GetInt(char* arr, int n);
 
 char* ReadFile(std::string name);
 
-
+int Poland(char* arr, int size);
