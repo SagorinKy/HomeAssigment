@@ -1,0 +1,8 @@
+program: taskB.o headTb.o
+	g++ taskB.o headTb.o -o program
+taskB.o: taskB.cpp headTb.h
+	g++ -c taskB.cpp
+headTb.o: headTb.cpp headTb.h
+	g++ -c headTb.cpp -std=c++17
+clean:
+	rm -r program *.o

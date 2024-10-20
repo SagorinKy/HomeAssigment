@@ -1,4 +1,5 @@
 #include "headTb.h"
+#include <iostream>
 
 char* ReadFile(std::string name)
 {
@@ -19,9 +20,9 @@ int FileSize(std::string name)
 	return (int)std::filesystem::file_size((std::filesystem::path) name) - 1;
 }
 
-int CountInt(char* arr, int n)
+int CountInt(const char* arr, int n)
 {
-	int k = 0;
+	int k = 1;
 	for(int i = 0; i < n; i++)
 	{
 		if(arr[i] == ' ')
@@ -29,10 +30,12 @@ int CountInt(char* arr, int n)
 		else if(arr[i] == '*' || arr[i] == '/' || arr[i] == '+' || arr[i] == '-')
 			k--;
 	}
-	return k;
+
+//	std::cout<<k<<std::endl;
+	return k;       
 }
 
-int GetInt(char* arr, int* num)
+int GetInt(const char* arr, int* num)
 {
 	int k = 0;
 	while(arr[*num] != ' ')
@@ -41,47 +44,60 @@ int GetInt(char* arr, int* num)
 		k += (int)arr[*num];
 		*num++;
 	}
+	//std::cout<<k<<std::endl;
 	return k;
 }
 
-int Poland(char* arr, int size)
+int Poland(const char* arr, int size)
 {
-	int n = CountInt(arr, size);
-	int* stek = new int(n);
+
+//	std::cout<<size<<std::endl;
+//	for(int i = 0; i < size;i++)
+//		std::cout<<*arr[i]<<std::endl;
+	int n = 4;
+//	n = CountInt(arr, size);
+	std::cout<<555555;
+	int* stek = new int[n];
+	std::cout<<10000;
 	int stekind = 0;
 	for(int i = 0; i < size; i++)
 	{
-		if(arr[i] != '*' || arr[i] != '/' || arr[i] != '+' || arr[i] != '-' || arr[i] != ' ')
+		if(arr[i] != '*' && arr[i] != '/' && arr[i] != '+' && arr[i] != '-' && arr[i] != ' ')
 		{
 			stek[stekind] = GetInt(arr, &i);
 			stekind++;
 		}
 		else if(arr[i] != ' ')
 		{
-			if(arr[i] = '*')
+			if(arr[i] == '*')
 			{
-				arr[i - 2] *= arr[i - 1];
-				arr[i - 1] = 0;
+				stek[stekind - 2] *= stek[stekind - 1];
+				stek[stekind - 1] = 0;
 				stekind--;
 			}
-			if(arr[i] = '/')
+			if(arr[i] == '/')
                         {
-                                arr[i - 2] /= arr[i - 1];
-                                arr[i - 1] = 0;
-                                stekind--;
-                        } if(arr[i] = '+')
+				stek[stekind - 2] *= stek[stekind - 1];
+				stek[stekind - 1] = 0;
+				stekind--;
+			}
+			if(arr[i] == '+')
                         {
-                                arr[i - 2] += arr[i - 1];
-                                arr[i - 1] = 0;
-                                stekind--;
-                        } if(arr[i] = '-')
+				stek[stekind - 2] *= stek[stekind - 1];
+				stek[stekind - 1] = 0;
+				stekind--;
+			} 
+			if(arr[i] == '-')
                         {
-                                arr[i - 2] -= arr[i - 1];
-                                arr[i - 1] = 0;
+                                stek[stekind - 2] -= stek[stekind - 1];
+                                stek[stekind - 1] = 0;
                                 stekind--;
                         }
 		}
 	}
-	return stek[0];
+	int res = stek[0];
+	delete[] stek;
+	return res;
 }
 		
+	
