@@ -1,40 +1,34 @@
 #include "DecepticonClass.h"
 
-class Decepticon: private Transformer
+Decepticon::Decepticon()
 {
-private:
-	std::string regiment;
-	int rank;
-public:
-	Decepticon()
-	{
-		regiment = "star";
-		rank = 1;
-	}
+	regiment = "star";
+	rank = 1;
+}
 
-	int getRank()
-	{
-		return rank;
-	}
-	void setRank(int rank)
-	{
-		this->rank = rank;
-	}
+int Decepticon::getRank()
+{
+	return rank;
+}
+void Decepticon::setRank(int rank)
+{
+	this->rank = rank;
+}
 
-	std::string getRegiment()
-	{
-		return regiment;
-	}
-	void setRegiment(std::string colour)
-	{
-		this->colour = regiment;
-	}
+std::string Decepticon::getRegiment()
+{
+	return regiment;
+}
+void Decepticon::setRegiment(std::string colour)
+{
+	this->regiment = regiment;
+}
 
-	bool isOnWar()
-	{
-		return true;
-	}
+bool Decepticon::isOnWar()
+{
+	return true;
+}
 
-	~Decepticon()
-	{ }
-};
+Decepticon::~Decepticon()
+{ }
+

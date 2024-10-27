@@ -1,44 +1,37 @@
-#include "DecepticonClass.h"
+#include "NeutralClass.h"
 
-class Nuetral: private Transformer
+Neutral::Neutral()
 {
-private:
-	float kindness;
-	int motorTemp;
-public:
-	Nuetral()
-	{
-		kindness = 0.6;
-		motorTemp = 37;
-	}
+	kindness = 0.6;
+	motorTemp = 37;
+}
 
-	int getTemp()
-	{
-		return motorTemp;
-	}
-	void setTemp(int motorTemp)
-	{
-		this->motorTemp = motorTemp;
-	}
+int Neutral::getTemp()
+{
+	return motorTemp;
+}
+void Neutral::setTemp(int motorTemp)
+{
+	this->motorTemp = motorTemp;
+}
 
-	float getKindness()
-	{
-		return kindness;
-	}
-	void setKindness(float kindness)
-	{
-		this->kindness = kindness;
-	}
+float Neutral::getKindness()
+{
+	return kindness;
+}
+void Neutral::setKindness(float kindness)
+{
+	this->kindness = kindness;
+}
 
-	bool isKind()
-	{
-		if(motorTemp >= 0.5)
-			return true;
-		else 
-			return false;
-	}
+bool Neutral::isKind()
+{
+	if(motorTemp >= 0.5)
+		return true;
+	else 
+		return false;
+}
 
-	~Nuetral()
-	{ }
-};
+Neutral::~Neutral()
+{ }
 
