@@ -8,8 +8,6 @@ class Ally
 private:
 	std::string name;
 	int age;
-	int numberOfFrindrs;
-	Transformer* friends;
 public:
 	Ally();
 	Ally(std::string name, int age);

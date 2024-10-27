@@ -1,14 +1,14 @@
-#ifndef NUETRAL_CLASS
-#define NUETRAL_CLASS
+#ifndef NEUTRAL_CLASS
+#define NEUTRAL_CLASS
 #include "TransformerClass.h"
 
-class Nuetral: private Transformer
+class Neutral: private Transformer
 {
 private:
 	float kindness;
 	int motorTemp;
 public:
-	Nuetral();
+	Neutral();
 
 	float getKindness();
 	void setKindness(float kindness);
@@ -18,8 +18,7 @@ public:
 	
 	bool isKind();
 
-	~Nuetral();
+	~Neutral();
 };
 
 #endif
-
