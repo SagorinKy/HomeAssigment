@@ -1,33 +1,34 @@
-#include "AutobotClass.h"
+#include "ArmorClass.h"
 
-Autobot::Autobot()
+Armor::Armor()
 {
-	colour = "red";
-	socialRating = 100;
+	durability = 100;
+	capacity = 100;
 }
-
-int Autobot::getRating()
+Armor::Armor(int dur, int cap)
 {
-	return socialRating;
+durability = dur;
+	capacity = cap;
 }
-void Autobot::setRating(int rating)
+int Armor::getDur()
 {
-	socialRating = rating;
+	return durability;
 }
-
-std::string Autobot::getColour()
+void Armor::setDur(int durability)
 {
-	return colour;
-}
-void Autobot::setColour(std::string colour)
-{
-	this->colour = colour;
+	this->durability = durability;
 }
 
-bool Autobot::sleep()
+int Armor::getCap()
 {
-	return true;
+	return capacity;
 }
-Autobot::~Autobot()
-{}
+void Armor::setCap(int capacity)
+{
+	this->capacity = capacity;
+}
 
+
+Armor::~Armor()
+{ }
+  
