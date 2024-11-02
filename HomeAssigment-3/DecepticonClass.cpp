@@ -1,6 +1,6 @@
 #include "DecepticonClass.h"
 
-Decepticon::Decepticon()
+Decepticon::Decepticon() : Transformer::Transformer()
 {
 	regiment = "star";
 	rank = 1;
@@ -8,7 +8,7 @@ Decepticon::Decepticon()
 
 int Decepticon::getRank()
 {
-	return rank;
+	return this->rank;
 }
 void Decepticon::setRank(int rank)
 {
@@ -17,9 +17,9 @@ void Decepticon::setRank(int rank)
 
 std::string Decepticon::getRegiment()
 {
-	return regiment;
+	return this->regiment;
 }
-void Decepticon::setRegiment(std::string colour)
+void Decepticon::setRegiment(std::string regiment)
 {
 	this->regiment = regiment;
 }
