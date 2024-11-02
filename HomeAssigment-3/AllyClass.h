@@ -16,6 +16,7 @@ public:
 	void addAge();
 	std::string getName();
 	void setName(std::string name);
+	bool isFriend(std::string* names, int n);
 	~Ally();
 
 };

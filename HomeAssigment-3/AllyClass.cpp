@@ -31,5 +31,12 @@ void Ally::setName(std::string name)
 {
 	this->name = name;
 }
+bool Ally::isFriend(std::string* names, int n)
+{
+	for(int i = 0; i < n; i++)
+		if(names[i] == name)
+			return true;
+	return false;
+}
 Ally::~Ally()
 {}
