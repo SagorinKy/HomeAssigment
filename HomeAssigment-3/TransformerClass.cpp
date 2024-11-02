@@ -66,8 +66,12 @@ int Transformer::getNumber()
 }
 std::string* Transformer::getFriendsNames()
 {
-	std::string* names = new std::string[numberOfFriends];
-	for(int i = 0; i < numberOfFriends; i++)
-		names[i] = friends[i].getName();
-	return names;
+	if(numberOfFriends > 0)
+	{
+		std::string* names = new std::string[numberOfFriends];
+		for(int i = 0; i < numberOfFriends; i++)
+			names[i] = friends[i].getName();
+		return names;
+	}
+	return nullptr;
 }
