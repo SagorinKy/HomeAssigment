@@ -1,3 +1,5 @@
+/* Kirill Sagorin st128530@student.spbu.ru
+third project */
 #include "DecepticonClass.h"
 
 Decepticon::Decepticon() : Transformer::Transformer()

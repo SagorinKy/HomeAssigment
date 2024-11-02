@@ -1,3 +1,5 @@
+# Kirill Sagorin st128530@student.spbu.ru third project 
+
 runClass: main.o TransformerClass.o ArmorClass.o AutobotClass.o DecepticonClass.o NeutralClass.o AllyClass.o
 	g++ main.o TransformerClass.o ArmorClass.o AutobotClass.o DecepticonClass.o NeutralClass.o AllyClass.o -o runClass
 main.o: TransformerClass.h main.cpp

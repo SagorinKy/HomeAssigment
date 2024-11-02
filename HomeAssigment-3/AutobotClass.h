@@ -1,3 +1,5 @@
+/* Kirill Sagorin st128530@student.spbu.ru
+third project */
 #ifndef AUTOBOT_CLASS
 #define AUTOBOT_CLASS
 #include "TransformerClass.h"

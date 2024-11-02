@@ -1,3 +1,5 @@
+/* Kirill Sagorin st128530@student.spbu.ru
+third project */
 #ifndef NEUTRAL_CLASS
 #define NEUTRAL_CLASS
 #include "TransformerClass.h"

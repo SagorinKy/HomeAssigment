@@ -1,3 +1,5 @@
+/* Kirill Sagorin st128530@student.spbu.ru
+third project */
 #ifndef ALLY_CLASS
 #define ALLY_CLASS
 

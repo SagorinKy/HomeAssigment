@@ -1,3 +1,5 @@
+/* Kirill Sagorin st128530@student.spbu.ru
+third project */
 #include "TransformerClass.h"
 
 Transformer::Transformer() : tank(1000), numberOfFriends(0), name("bob"), ammunition(15), friends(nullptr), armor()
