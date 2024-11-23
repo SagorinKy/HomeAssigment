@@ -12,7 +12,7 @@ Armor::Armor(int dur, int cap)
 durability = dur;
 	capacity = cap;
 }
-int Armor::getDur()
+int Armor::getDur() const
 {
 	return durability;
 }
@@ -21,7 +21,7 @@ void Armor::setDur(int durability)
 	this->durability = durability;
 }
 
-int Armor::getCap()
+int Armor::getCap() const
 {
 	return capacity;
 }

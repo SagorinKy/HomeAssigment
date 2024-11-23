@@ -12,9 +12,9 @@ private:
 public:
 	Armor();
 	Armor(int capacity, int durability);
-	int getDur();
+	int getDur() const;
 	void setDur(int durability);
-	int getCap();
+	int getCap() const;
 	void setCap(int capacity);
 	~Armor();
 
