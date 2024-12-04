@@ -3,6 +3,6 @@ program: taskB.o headTb.o
 taskB.o: taskB.cpp headTb.h
 	g++ -c taskB.cpp
 headTb.o: headTb.cpp headTb.h
-	g++ -c headTb.cpp -std=c++17
+	g++ -c headTb.cpp
 clean:
 	rm -r program *.o
