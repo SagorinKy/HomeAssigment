@@ -1,3 +1,6 @@
+/* Kirill Sagorin st128530@student.spbu.ru
+Home Assigment 2b */
+
 #include "headTb.h"
 #include <iostream>
 
@@ -5,19 +8,17 @@ char* ReadFile(std::string name)
 {
 	std::filesystem::path mypath = name;
 	int n = std::filesystem::file_size(mypath) - 1;
-	char* arr = new char(n);
-
+	char* arr = new char[n];
 	std::ifstream file;
 	file.open(mypath, std::ios::in | std::ios::binary);
 	file.read(arr, n);
-
 	file.close();
 	return arr;
 }
 
 int FileSize(std::string name)
 {
-	return (int)std::filesystem::file_size((std::filesystem::path) name) - 1;
+	return (int)std::filesystem::file_size(name) - 1;
 }
 
 int CountInt(const char* arr, int n)
@@ -30,8 +31,6 @@ int CountInt(const char* arr, int n)
 		else if(arr[i] == '*' || arr[i] == '/' || arr[i] == '+' || arr[i] == '-')
 			k--;
 	}
-
-//	std::cout<<k<<std::endl;
 	return k;       
 }
 
@@ -44,21 +43,13 @@ int GetInt(const char* arr, int* num)
 		k += (int)arr[*num];
 		*num++;
 	}
-	//std::cout<<k<<std::endl;
 	return k;
 }
 
 int Poland(const char* arr, int size)
 {
-
-//	std::cout<<size<<std::endl;
-//	for(int i = 0; i < size;i++)
-//		std::cout<<*arr[i]<<std::endl;
-	int n = 4;
-//	n = CountInt(arr, size);
-	std::cout<<555555;
+	int n = CountInt(arr, size);
 	int* stek = new int[n];
-	std::cout<<10000;
 	int stekind = 0;
 	for(int i = 0; i < size; i++)
 	{

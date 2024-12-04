@@ -1,3 +1,6 @@
+/* Kirill Sagorin st128530@student.spbu.ru
+Home Assigment 2b */
+
 #include <filesystem>
 #include <string>
 #include <fstream>
