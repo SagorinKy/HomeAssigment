@@ -9,3 +9,5 @@ HomeAssigment-3 - Make a class, three enherited classes and a composition and a 
 make
 ## Run
 ./runClass
+## Run all tests
+make runTest
