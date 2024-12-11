@@ -43,7 +43,14 @@ test-Transformer.o: test-Transformer.cpp
 testTransformer: test-Transformer.o TransformerClass.o ArmorClass.o AllyClass.o
 	g++ test-Transformer.o TransformerClass.o ArmorClass.o AllyClass.o -o testTransformer -lgtest -lgtest_main -pthread
 
-
 test: testArmor testAutobot testDecepticon testNeutral testAlly testTransformer
+	
+runTest: test
+	./testArmor
+	./testAutobot
+	./testDecepticon
+	./testNeutral
+	./testAlly
+	./testTransformer
 clean:
 	rm -f runClass testArmor testAutobot testNeutral testDecepticon testAlly testTransformer *.o TransformerClass AllyClass ArmorClass AutobotClass DecepticonClass NeutralClass test-Armor test-Autobot test-Neutral test-Decepticon test-Ally test-Transformer
