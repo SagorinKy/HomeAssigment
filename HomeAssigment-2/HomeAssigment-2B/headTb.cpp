@@ -41,7 +41,7 @@ int GetInt(const char* arr, int* num)
 	{
 		k *= 10;
 		k += (int)arr[*num];
-		*num++;
+		(*num)++;
 	}
 	return k;
 }
@@ -68,13 +68,13 @@ int Poland(const char* arr, int size)
 			}
 			if(arr[i] == '/')
                         {
-				stek[stekind - 2] *= stek[stekind - 1];
+				stek[stekind - 2] /= stek[stekind - 1];
 				stek[stekind - 1] = 0;
 				stekind--;
 			}
 			if(arr[i] == '+')
                         {
-				stek[stekind - 2] *= stek[stekind - 1];
+				stek[stekind - 2] += stek[stekind - 1];
 				stek[stekind - 1] = 0;
 				stekind--;
 			} 
