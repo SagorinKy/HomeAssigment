@@ -48,6 +48,19 @@ bool Decepticon::isOnWar()
     return true;
 }
 
+void Decepticon::transform() const
+{
+	std::cout << "Decepticon : transform()" << std::endl;
+}
+void Decepticon::openFire() const
+{
+	std::cout << "Decepticon : openFire()" << std::endl;
+}
+void Decepticon::ultimate() const
+{
+	std::cout << "Decepticon : ultimate()" << std::endl;
+}
+
 Decepticon::~Decepticon()
 { }
 

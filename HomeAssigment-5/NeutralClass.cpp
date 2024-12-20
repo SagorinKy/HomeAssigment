@@ -55,6 +55,20 @@ bool Neutral::isKind()
         return false;
 }
 
+void Neutral::transform() const
+{
+	std::cout << "Neutral : transform()" << std::endl;
+}
+void Neutral::openFire() const
+{
+	std::cout << "Neutral : openFire()" << std::endl;
+}
+void Neutral::ultimate() const
+{
+	std::cout << "Neutral : ultimate()" << std::endl;
+}
+
+
 Neutral::~Neutral()
 { }
 

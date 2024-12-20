@@ -48,6 +48,20 @@ bool Autobot::operator<=(const Autobot& A)
         return this->socialRating < A.socialRating;
     return static_cast<Transformer>(*this) <= static_cast<Transformer>(A);
 }
+
+void Autobot::transform() const
+{
+	std::cout << "Autobot : transform()" << std::endl;
+}
+void Autobot::openFire() const
+{
+	std::cout << "Autobot : openFire()" << std::endl;
+}
+void Autobot::ultimate() const
+{
+	std::cout << "Autobot : ultimate()" << std::endl;
+}
+
 Autobot::~Autobot()
 {}
 

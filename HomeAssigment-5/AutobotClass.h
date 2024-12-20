@@ -21,6 +21,11 @@ public:
 
     bool sleep();
     bool operator<=(const Autobot& A);
+
+    void transform() const override;
+    void openFire() const override;
+    void ultimate() const override;
+
     ~Autobot();
 };
 

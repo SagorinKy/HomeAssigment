@@ -21,6 +21,10 @@ public:
 
     bool isOnWar();
     bool operator<=(const Decepticon& D);
+    
+    void transform() const override;
+    void openFire() const override;
+    void ultimate() const override;
 
     ~Decepticon();
 };

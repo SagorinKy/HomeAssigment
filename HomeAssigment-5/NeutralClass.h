@@ -23,6 +23,11 @@ public:
     bool isKind();
     bool operator<=(const Neutral& N);
 
+    void transform() const override;
+    void openFire() const override;
+    void ultimate() const override;
+
+
     ~Neutral();
 };
 
