@@ -2,7 +2,7 @@
 third project */
 #include "TransformerClass.h"
 #include "gtest/gtest.h"
-
+#include <iostream>
 
 TEST(Transformer, getFuel)
 {
@@ -69,4 +69,19 @@ TEST(Transformer, IsOn)
 {
     Transformer t;
     EXPECT_TRUE(t.isOn());
+}
+
+TEST(Transformer, osOperator)
+{
+	Transformer t;
+	std::ostringstream out;
+	out << t;
+	EXPECT_EQ("Hello World! I'm Transformer " + t.getName() + "!", out.str());
+}
+TEST(Transformer, lesseqOperator)
+{
+	Transformer t("bob", 1000, 15, 15, 10);
+	Transformer T("paul", 1000, 20, 20, 10);
+	EXPECT_TRUE(t <= T);
+	EXPECT_FALSE(T <= t);
 }

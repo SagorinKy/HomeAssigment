@@ -36,3 +36,21 @@ TEST(Neutral, isKind_False) {
     n.setTemp(0.4); 
     EXPECT_FALSE(n.isKind()); 
 }
+
+TEST(Neutral, osOperator)
+{	
+	Neutral n;
+        std::ostringstream out;
+        out << n;
+        EXPECT_EQ("Hello World! I'm Neutral " + n.getName() + "!", out.str());
+}
+TEST(Neutral, lesseqOperator)
+{
+        Transformer t("bob", 1000, 15, 15, 10);
+        Transformer T("paul", 1000, 20, 20, 10);
+
+        Neutral n(20, 0.5, t);
+        Neutral N(30, 0.6, T);
+        EXPECT_TRUE(n <= N);
+        EXPECT_FALSE(N <= n);
+}

@@ -29,3 +29,23 @@ TEST(Autobot, sleep) {
     Autobot a; 
     EXPECT_TRUE(a.sleep()); 
 }
+
+TEST(Autobot, osOperator)
+{	
+	Autobot a;
+        std::ostringstream out;
+        out << a;
+        EXPECT_EQ("Hello World! I'm Autobot " + a.getName() + "!", out.str());
+}
+TEST(Autobot, lesseqOperator)
+{
+        Transformer t("bob", 1000, 15, 15, 10);
+        Transformer T("paul", 1000, 20, 20, 10);
+
+        Autobot a(20, "red", t);
+        Autobot A(30, "star", T);
+        EXPECT_TRUE(a <= A);
+        EXPECT_FALSE(A <= a);
+}
+
+
