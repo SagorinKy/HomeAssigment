@@ -1,91 +1,91 @@
 /* Kirill Sagorin st128530@student.spbu.ru
-third project */
+forth project */
 #include "TransformerClass.h"
 
 Transformer::Transformer() : tank(1000), numberOfFriends(0), name("bob"), ammunition(15), friends(nullptr), armor()
 {
-	this->fuel = 1000;
+    this->fuel = 1000;
 }
 Transformer::Transformer(std::string name, int tank, int ammunition, int armorCap, int armorDur) : tank(tank), numberOfFriends(0), friends(nullptr)
 {
-	this->name = name;
-	this->fuel = tank;
-	this->ammunition = ammunition;
-	this->armor = Armor(armorCap, armorDur);
+    this->name = name;
+    this->fuel = tank;
+    this->ammunition = ammunition;
+    this->armor = Armor(armorCap, armorDur);
 }
 
-std::ostream& operator<<(std::ostream& os, const Transformer& T) 
+std::ostream& operator<<(std::ostream& os, const Transformer& T)
 {
-	os << "Hello World! I'm Transformer " << T.name <<"!";
-	return os;
+    os << "Hello World! I'm Transformer " << T.name <<"!";
+    return os;
 }
 bool Transformer::operator<=(const Transformer& T)
 {
-	int a = T.armor.getCap();
-	return !(armor.getCap() * ammunition > T.armor.getCap() * T.ammunition);
+    int a = T.armor.getCap();
+    return !(armor.getCap() * ammunition > T.armor.getCap() * T.ammunition);
 }
 
 
 int Transformer::getFuel() const
 {
-	return fuel;
+    return fuel;
 }
 void Transformer::setFuel(int fuel)
 {
-	if(fuel < tank)
-		this->fuel = fuel;
-	else
-		this->fuel = tank;
+    if(fuel < tank)
+        this->fuel = fuel;
+    else
+        this->fuel = tank;
 }
 
 int Transformer::getTank() const
 {
-	return tank;
+    return tank;
 }
 
 std::string Transformer::getName() const
 {
-	return name;
+    return name;
 }
 void Transformer::setName(std::string name)
 {
-	this->name = name;
+    this->name = name;
 }
 bool Transformer::isOn()
 {
-	return true;
+    return true;
 }
 
 Transformer::~Transformer()
 {
-	if (friends != NULL)
-		delete[] friends;
+    if (friends != NULL)
+        delete[] friends;
 }
 
 void Transformer::addFriend(Ally ally)
 {
-	Ally* allies;
-	numberOfFriends++;
-	allies = new Ally[numberOfFriends];
-	for(int i = 0; i < numberOfFriends - 1; i++)
-		allies[i] = friends[i];
-	allies[numberOfFriends - 1] = ally;
-	if(friends!=nullptr)
-		delete[] friends;
-	friends = allies;
+    Ally* allies;
+    numberOfFriends++;
+    allies = new Ally[numberOfFriends];
+    for(int i = 0; i < numberOfFriends - 1; i++)
+        allies[i] = friends[i];
+    allies[numberOfFriends - 1] = ally;
+    if(friends!=nullptr)
+        delete[] friends;
+    friends = allies;
 }
 int Transformer::getNumber()
 {
-	return numberOfFriends;
+    return numberOfFriends;
 }
 std::string* Transformer::getFriendsNames()
 {
-	if(numberOfFriends > 0)
-	{
-		std::string* names = new std::string[numberOfFriends];
-		for(int i = 0; i < numberOfFriends; i++)
-			names[i] = friends[i].getName();
-		return names;
-	}
-	return nullptr;
+    if(numberOfFriends > 0)
+    {
+        std::string* names = new std::string[numberOfFriends];
+        for(int i = 0; i < numberOfFriends; i++)
+            names[i] = friends[i].getName();
+        return names;
+    }
+    return nullptr;
 }

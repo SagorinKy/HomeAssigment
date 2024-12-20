@@ -1,52 +1,52 @@
 /* Kirill Sagorin st128530@student.spbu.ru
-third project */
+forth project */
 #include "AutobotClass.h"
 
 Autobot::Autobot()
 {
-	colour = "red";
-	socialRating = 100;
+    colour = "red";
+    socialRating = 100;
 }
 Autobot::Autobot(int socialRating, std::string colour, Transformer& t) : Transformer::Transformer(t)
 {
-	this->socialRating = socialRating;
-	this->colour = colour;
+    this->socialRating = socialRating;
+    this->colour = colour;
 }
 
 int Autobot::getRating()
 {
-	return socialRating;
+    return socialRating;
 }
 void Autobot::setRating(int rating)
 {
-	socialRating = rating;
+    socialRating = rating;
 }
 
 std::string Autobot::getColour()
 {
-	return colour;
+    return colour;
 }
 void Autobot::setColour(std::string colour)
 {
-	this->colour = colour;
+    this->colour = colour;
 }
 
 bool Autobot::sleep()
 {
-	return true;
+    return true;
 }
 
 std::ostream& operator<<(std::ostream& os, const Autobot& A)
 {
-	os << "Hello World! I'm Autobot " << A.getName() << "!";
-	return os;
+    os << "Hello World! I'm Autobot " << A.getName() << "!";
+    return os;
 }
 
 bool Autobot::operator<=(const Autobot& A)
 {
-	if(this->socialRating != A.socialRating)
-		return this->socialRating < A.socialRating;
-	return static_cast<Transformer>(*this) <= static_cast<Transformer>(A);
+    if(this->socialRating != A.socialRating)
+        return this->socialRating < A.socialRating;
+    return static_cast<Transformer>(*this) <= static_cast<Transformer>(A);
 }
 Autobot::~Autobot()
 {}

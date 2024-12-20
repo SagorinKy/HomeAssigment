@@ -7,16 +7,16 @@ class Armor
 
 {
 private:
-	int durability;
-	int capacity;
+    int durability;
+    int capacity;
 public:
-	Armor();
-	Armor(int capacity, int durability);
-	int getDur() const;
-	void setDur(int durability);
-	int getCap() const;
-	void setCap(int capacity);
-	~Armor();
+    Armor();
+    Armor(int capacity, int durability);
+    int getDur() const;
+    void setDur(int durability);
+    int getCap() const;
+    void setCap(int capacity);
+    ~Armor();
 
 };
 
