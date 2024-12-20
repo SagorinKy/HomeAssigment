@@ -6,6 +6,7 @@ third project */
 
 class Neutral: private Transformer
 {
+	friend std::ostream& operator<< (std::ostream& os, const Neutral& N);
 private:
 	float kindness;
 	int motorTemp;
@@ -19,6 +20,7 @@ public:
 	void setTemp(int temperature);
 	
 	bool isKind();
+	bool operator<=(const Neutral& N);
 
 	~Neutral();
 };
