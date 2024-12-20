@@ -11,7 +11,8 @@ bool Class2::bar(int a, std::vector<float>& vec)
 }
 bool Class3::bar(int a, std::vector<float>& vec)
 {
-	return vec.size() == -a;
+	int b = vec.size();
+	return b == -1 * a;
 }
 int Class1::c_1_1()
 {
