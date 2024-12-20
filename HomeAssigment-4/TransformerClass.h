@@ -11,7 +11,8 @@ third project */
 
 class Transformer
 {
-private:
+	friend std::ostream& operator<<(std::ostream& os, const Transformer& T);
+protected:
 	const int tank;
 	int numberOfFriends;
 	std::string name;
@@ -23,14 +24,14 @@ public:
 	Transformer();
 	Transformer(std::string name, int tank, int ammunition, int armorCap, int armorDur);
 	~Transformer();
-	friend std::ostream& operator<<(std::ostream& os, const Transformer& T);
-	bool operator<=(const Transformer& T) const; 
 	int getFuel();
 	void setFuel(int fuel);
 	int getTank();
 	std::string getName();
 	void setName(std::string name);
 	bool isOn();
+
+	bool operator<=(const Transformer& T); 
 
 	void addFriend(Ally ally);
 	int getNumber();

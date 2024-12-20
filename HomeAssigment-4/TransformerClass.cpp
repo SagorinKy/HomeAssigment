@@ -19,11 +19,13 @@ std::ostream& operator<<(std::ostream& os, const Transformer& T)
 	os << "Hello world! I'm Transformer " << T.name <<"!";
 	return os;
 }
-bool Transformer::operator<=(const Transformer& T) const
+bool Transformer::operator<=(const Transformer& T)
 {
 	int a = T.armor.getCap();
-	return !(this->armor.getCap() * this->ammunition > T.armor.getCap() * T.ammunition);
+	return !(armor.getCap() * ammunition > T.armor.getCap() * T.ammunition);
 }
+
+
 int Transformer::getFuel()
 {
 	return fuel;
