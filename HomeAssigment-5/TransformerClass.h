@@ -36,6 +36,10 @@ public:
     void addFriend(Ally ally);
     int getNumber();
     std::string* getFriendsNames();
+    
+    virtual void transform() const;
+    virtual void openFire() const;
+    virtual void ultimate() const;
 };
 #endif
 

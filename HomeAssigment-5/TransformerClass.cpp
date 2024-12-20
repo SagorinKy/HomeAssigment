@@ -1,5 +1,5 @@
 /* Kirill Sagorin st128530@student.spbu.ru
-forth project */
+fifth project */
 #include "TransformerClass.h"
 
 Transformer::Transformer() : tank(1000), numberOfFriends(0), name("bob"), ammunition(15), friends(nullptr), armor()
@@ -88,4 +88,17 @@ std::string* Transformer::getFriendsNames()
         return names;
     }
     return nullptr;
+}
+
+void Transformer::transform() const
+{
+	std::cout << "Transformer : transform()" << std::endl;
+}
+void Transformer::openFire() const
+{
+	std::cout << "Transformer : openFire()" << std::endl;
+}
+void Transformer::ultimate() const
+{
+	std::cout << "Transformer : ultimate()" << std::endl;
 }
