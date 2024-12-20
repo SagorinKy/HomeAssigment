@@ -4,7 +4,7 @@ third project */
 #define NEUTRAL_CLASS
 #include "TransformerClass.h"
 
-class Neutral: private Transformer
+class Neutral: public Transformer
 {
 	friend std::ostream& operator<< (std::ostream& os, const Neutral& N);
 private:
@@ -12,7 +12,8 @@ private:
 	int motorTemp;
 public:
 	Neutral();
-
+	Neutral(int motorTemp, float kindness, Transformer& t);
+	
 	float getKindness();
 	void setKindness(float kindness);
 

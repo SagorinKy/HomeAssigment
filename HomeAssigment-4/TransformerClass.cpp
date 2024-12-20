@@ -14,9 +14,9 @@ Transformer::Transformer(std::string name, int tank, int ammunition, int armorCa
 	this->armor = Armor(armorCap, armorDur);
 }
 
-std::ostream& operator<<(std::ostream& os, const Transformer& T)
+std::ostream& operator<<(std::ostream& os, const Transformer& T) 
 {
-	os << "Hello world! I'm Transformer " << T.name <<"!";
+	os << "Hello World! I'm Transformer " << T.name <<"!";
 	return os;
 }
 bool Transformer::operator<=(const Transformer& T)
@@ -26,7 +26,7 @@ bool Transformer::operator<=(const Transformer& T)
 }
 
 
-int Transformer::getFuel()
+int Transformer::getFuel() const
 {
 	return fuel;
 }
@@ -38,12 +38,12 @@ void Transformer::setFuel(int fuel)
 		this->fuel = tank;
 }
 
-int Transformer::getTank()
+int Transformer::getTank() const
 {
 	return tank;
 }
 
-std::string Transformer::getName()
+std::string Transformer::getName() const
 {
 	return name;
 }

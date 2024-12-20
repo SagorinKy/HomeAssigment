@@ -24,10 +24,10 @@ public:
 	Transformer();
 	Transformer(std::string name, int tank, int ammunition, int armorCap, int armorDur);
 	~Transformer();
-	int getFuel();
+	int getFuel() const;
 	void setFuel(int fuel);
-	int getTank();
-	std::string getName();
+	int getTank() const;
+	std::string getName() const;
 	void setName(std::string name);
 	bool isOn();
 

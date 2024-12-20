@@ -7,6 +7,11 @@ Neutral::Neutral()
 	kindness = 0.6;
 	motorTemp = 37;
 }
+Neutral::Neutral(int motorTemp, float kindness, Transformer& t) : Transformer::Transformer(t)
+{
+	this->motorTemp = motorTemp;
+	this->kindness = kindness;
+}
 
 int Neutral::getTemp()
 {

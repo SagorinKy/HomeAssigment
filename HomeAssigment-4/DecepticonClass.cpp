@@ -7,6 +7,11 @@ Decepticon::Decepticon() : Transformer::Transformer()
 	regiment = "star";
 	rank = 1;
 }
+Decepticon::Decepticon(int rank, std::string regiment, Transformer& t) : Transformer::Transformer(t)
+{
+	this->regiment = regiment;
+	this->rank = rank;
+}
 
 int Decepticon::getRank() const
 {

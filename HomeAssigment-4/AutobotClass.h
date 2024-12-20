@@ -4,7 +4,7 @@ third project */
 #define AUTOBOT_CLASS
 #include "TransformerClass.h"
 
-class Autobot: private Transformer
+class Autobot: public Transformer
 {
 	friend std::ostream& operator<< (std::ostream& os, const Autobot& A);
 private:
@@ -12,7 +12,7 @@ private:
 	int socialRating;
 public:
 	Autobot();
-
+	Autobot(int socialRating, std::string colour, Transformer& t);
 	int getRating();
 	void setRating(int rating);
 

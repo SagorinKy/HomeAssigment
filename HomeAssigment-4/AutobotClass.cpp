@@ -7,6 +7,11 @@ Autobot::Autobot()
 	colour = "red";
 	socialRating = 100;
 }
+Autobot::Autobot(int socialRating, std::string colour, Transformer& t) : Transformer::Transformer(t)
+{
+	this->socialRating = socialRating;
+	this->colour = colour;
+}
 
 int Autobot::getRating()
 {

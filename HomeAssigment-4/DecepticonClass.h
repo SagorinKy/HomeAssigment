@@ -12,7 +12,7 @@ private:
 	int rank;
 public:
 	Decepticon();
-
+	Decepticon(int rank, std::string regiment, Transformer& t);
 	int getRank() const;
 	void setRank(int rank);
 	
