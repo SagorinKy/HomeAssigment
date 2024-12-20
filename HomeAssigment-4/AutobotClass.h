@@ -6,6 +6,7 @@ third project */
 
 class Autobot: private Transformer
 {
+	friend std::ostream& operator<< (std::ostream& os, const Autobot& A);
 private:
 	std::string colour;
 	int socialRating;
@@ -19,7 +20,7 @@ public:
 	void setColour(std::string colour);
 	
 	bool sleep();
-
+	bool operator<=(const Autobot& A);
 	~Autobot();
 };
 
