@@ -11,3 +11,5 @@ make
 ./runClass
 ## Build Tests
 make test
+## Run all tests
+./test-runClass
