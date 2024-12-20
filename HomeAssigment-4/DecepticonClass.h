@@ -4,21 +4,23 @@ third project */
 #define DECEPTICON_CLASS
 #include "TransformerClass.h"
 
-class Decepticon: private Transformer
+class Decepticon: public Transformer
 {
+	friend std::ostream& operator<< (std::ostream& os, const Decepticon& D);
 private:
 	std::string regiment;
 	int rank;
 public:
 	Decepticon();
 
-	int getRank();
+	int getRank() const;
 	void setRank(int rank);
-
-	std::string getRegiment();
+	
+	std::string getRegiment() const;
 	void setRegiment(std::string regiment);
 	
 	bool isOnWar();
+	bool operator<=(const Decepticon& D);
 
 	~Decepticon();
 };

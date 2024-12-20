@@ -1,5 +1,5 @@
 /* Kirill Sagorin st128530@student.spbu.ru
-third project */
+fourth project */
 #include "DecepticonClass.h"
 
 Decepticon::Decepticon() : Transformer::Transformer()
@@ -8,7 +8,7 @@ Decepticon::Decepticon() : Transformer::Transformer()
 	rank = 1;
 }
 
-int Decepticon::getRank()
+int Decepticon::getRank() const
 {
 	return this->rank;
 }
@@ -17,13 +17,25 @@ void Decepticon::setRank(int rank)
 	this->rank = rank;
 }
 
-std::string Decepticon::getRegiment()
+std::string Decepticon::getRegiment() const
 {
 	return this->regiment;
 }
 void Decepticon::setRegiment(std::string regiment)
 {
 	this->regiment = regiment;
+}
+
+std::ostream& operator<<(std::ostream& os, const Decepticon& D)
+{
+	os << "Hello World! I'm Decepticon " << D.getName() << "!";
+	return os;
+}
+bool Decepticon::operator<=(const Decepticon& D)
+{
+	if(this->rank != D.rank)
+		return this->rank < D.rank;
+	return static_cast<Transformer>(*this) <= static_cast<Transformer>(D);
 }
 
 bool Decepticon::isOnWar()
