@@ -1,4 +1,8 @@
+#ifndef TEMPLATE_H
+#define TEMPLATE_H
+
 #include <iostream>
+#include "classes.h"
 #include <vector>
 
 template <typename T>
@@ -15,3 +19,8 @@ public:
 	bool foo();
 };
 
+template class TemplClass<Class1>;
+template class TemplClass<Class2>;
+template class TemplClass<Class3>;
+
+#endif 
