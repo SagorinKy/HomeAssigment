@@ -1,15 +1,15 @@
 #include "classes.h"
 #include <iostream>
 
-bool Class1::bar(int a, std::vector<float>& vec)
+bool Class1::baz(int a, std::vector<float>& vec)
 {
 	return a > 0;
 }
-bool Class2::bar(int a, std::vector<float>& vec)
+bool Class2::baz(int a, std::vector<float>& vec)
 {
 	return !vec.empty();
 }
-bool Class3::bar(int a, std::vector<float>& vec)
+bool Class3::baz(int a, std::vector<float>& vec)
 {
 	int b = vec.size();
 	return b == -1 * a;
