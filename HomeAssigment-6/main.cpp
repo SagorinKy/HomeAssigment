@@ -1,4 +1,6 @@
 #include "gtest/gtest.h"
+#include "template.h"
+#include "classes.h"
 
 int main(int argc, char** argv)
 {
