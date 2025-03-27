@@ -10,7 +10,7 @@ int main()
 	int size = FileSize(name);
 	char* arr;
 	arr = ReadFile(name);
-	int result = Poland(arr, size);
+	float result = Poland(arr, size);
 	std::cout << result << std::endl;
 
 	delete[] arr;

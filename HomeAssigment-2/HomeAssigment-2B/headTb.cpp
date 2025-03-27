@@ -40,54 +40,54 @@ int GetInt(const char* arr, int* num)
 	while(arr[*num] != ' ')
 	{
 		k *= 10;
-		k += (int)arr[*num];
+		k += arr[*num] - '0';
 		(*num)++;
 	}
 	return k;
 }
 
-int Poland(const char* arr, int size)
+float Poland(const char* arr, int size)
 {
 	int n = CountInt(arr, size);
-	int* stek = new int[n];
-	int stekind = 0;
+	float* stack = new float[n];
+	int stackind = 0;
 	for(int i = 0; i < size; i++)
 	{
 		if(arr[i] != '*' && arr[i] != '/' && arr[i] != '+' && arr[i] != '-' && arr[i] != ' ')
 		{
-			stek[stekind] = GetInt(arr, &i);
-			stekind++;
+			stack[stackind] = static_cast<float>(GetInt(arr, &i));
+			stackind++;
 		}
 		else if(arr[i] != ' ')
 		{
 			if(arr[i] == '*')
 			{
-				stek[stekind - 2] *= stek[stekind - 1];
-				stek[stekind - 1] = 0;
-				stekind--;
+				stack[stackind - 2] *= stack[stackind - 1];
+				stack[stackind - 1] = 0;
+				stackind--;
 			}
 			if(arr[i] == '/')
                         {
-				stek[stekind - 2] /= stek[stekind - 1];
-				stek[stekind - 1] = 0;
-				stekind--;
+				stack[stackind - 2] /= stack[stackind - 1];
+				stack[stackind - 1] = 0;
+				stackind--;
 			}
 			if(arr[i] == '+')
                         {
-				stek[stekind - 2] += stek[stekind - 1];
-				stek[stekind - 1] = 0;
-				stekind--;
+				stack[stackind - 2] += stack[stackind - 1];
+				stack[stackind - 1] = 0;
+				stackind--;
 			} 
 			if(arr[i] == '-')
                         {
-                                stek[stekind - 2] -= stek[stekind - 1];
-                                stek[stekind - 1] = 0;
-                                stekind--;
+                                stack[stackind - 2] -= stack[stackind - 1];
+                                stack[stackind - 1] = 0;
+                                stackind--;
                         }
 		}
 	}
-	int res = stek[0];
-	delete[] stek;
+	float res = stack[0];
+	delete[] stack;
 	return res;
 }
 		

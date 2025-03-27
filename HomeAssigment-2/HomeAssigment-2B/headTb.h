@@ -13,4 +13,4 @@ int GetInt(const char* arr, int* n);
 
 char* ReadFile(std::string name);
 
-int Poland(const char* arr, int size);
+float Poland(const char* arr, int size);
