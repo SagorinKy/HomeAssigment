@@ -11,7 +11,7 @@ A = ar
 
 AFLAGS = rsv
 
-CXXFLAGS = -I. -std=c++17 -Wall -g -fPIC
+CXXFLAGS = -I. -std=c++17 -Werror -Wpedantic -Wall -g -fPIC
 
 LDXXFLAGS = $(CXXFLAGS) -L. -l:$(LIBPROJECT)
 
