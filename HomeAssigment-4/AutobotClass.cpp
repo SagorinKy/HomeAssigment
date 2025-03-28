@@ -42,11 +42,16 @@ std::ostream& operator<<(std::ostream& os, const Autobot& A)
     return os;
 }
 
-bool Autobot::operator<=(const Autobot& A)
+bool Autobot::operator<(const Autobot& A)
 {
     if(this->socialRating != A.socialRating)
         return this->socialRating < A.socialRating;
-    return static_cast<Transformer>(*this) <= static_cast<Transformer>(A);
+    return static_cast<Transformer>(*this) < static_cast<Transformer>(A);
+}bool Autobot::operator>(const Autobot& A)
+{
+    if(this->socialRating != A.socialRating)
+        return this->socialRating > A.socialRating;
+    return static_cast<Transformer>(*this) > static_cast<Transformer>(A);
 }
 Autobot::~Autobot()
 {}

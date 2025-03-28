@@ -36,11 +36,17 @@ std::ostream& operator<<(std::ostream& os, const Decepticon& D)
     os << "Hello World! I'm Decepticon " << D.getName() << "!";
     return os;
 }
-bool Decepticon::operator<=(const Decepticon& D)
+bool Decepticon::operator<(const Decepticon& D)
 {
     if(this->rank != D.rank)
         return this->rank < D.rank;
-    return static_cast<Transformer>(*this) <= static_cast<Transformer>(D);
+    return static_cast<Transformer>(*this) < static_cast<Transformer>(D);
+}
+bool Decepticon::operator>(const Decepticon& D)
+{
+    if(this->rank != D.rank)
+        return this->rank > D.rank;
+    return static_cast<Transformer>(*this) > static_cast<Transformer>(D);
 }
 
 bool Decepticon::isOnWar()

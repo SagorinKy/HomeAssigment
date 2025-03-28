@@ -21,7 +21,8 @@ public:
     void setTemp(int temperature);
 
     bool isKind();
-    bool operator<=(const Neutral& N);
+    bool operator<(const Neutral& N);
+    bool operator>(const Neutral& N);
 
     ~Neutral();
 };

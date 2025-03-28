@@ -78,10 +78,17 @@ TEST(Transformer, osOperator)
     out << t;
     EXPECT_EQ("Hello World! I'm Transformer " + t.getName() + "!", out.str());
 }
-TEST(Transformer, lesseqOperator)
+TEST(Transformer, lessOperator)
 {
     Transformer t("bob", 1000, 15, 15, 10);
     Transformer T("paul", 1000, 20, 20, 10);
-    EXPECT_TRUE(t <= T);
-    EXPECT_FALSE(T <= t);
+    EXPECT_TRUE(t < T);
+    EXPECT_FALSE(T < t);
+}
+TEST(Transformer, moreOperator)
+{
+    Transformer t("bob", 1000, 15, 15, 10);
+    Transformer T("paul", 1000, 20, 20, 10);
+    EXPECT_FALSE(t > T);
+    EXPECT_TRUE(T > t);
 }

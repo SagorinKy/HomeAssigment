@@ -37,14 +37,23 @@ std::ostream& operator<<(std::ostream& os, const Neutral& N)
     return os;
 }
 
-bool Neutral::operator<=(const Neutral& N)
+bool Neutral::operator<(const Neutral& N)
 {
     float difKind = this->kindness - N.kindness;
     if(difKind < -0.1)
         return true;
     if(difKind > 0.1)
         return false;
-    return static_cast<Transformer>(*this) <= static_cast<Transformer>(N);
+    return static_cast<Transformer>(*this) < static_cast<Transformer>(N);
+}
+bool Neutral::operator>(const Neutral& N)
+{
+    float difKind = this->kindness - N.kindness;
+    if(difKind < -0.1)
+        return false;
+    if(difKind > 0.1)
+        return true;
+    return static_cast<Transformer>(*this) > static_cast<Transformer>(N);
 }
 
 bool Neutral::isKind()

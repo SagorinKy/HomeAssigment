@@ -31,7 +31,8 @@ public:
     void setName(std::string name);
     bool isOn();
 
-    bool operator<=(const Transformer& T);
+    bool operator<(const Transformer& T);
+    bool operator>(const Transformer& T);
 
     void addFriend(Ally ally);
     int getNumber();

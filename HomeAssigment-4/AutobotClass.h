@@ -20,7 +20,8 @@ public:
     void setColour(std::string colour);
 
     bool sleep();
-    bool operator<=(const Autobot& A);
+    bool operator<(const Autobot& A);
+    bool operator>(const Autobot& A);
     ~Autobot();
 };
 

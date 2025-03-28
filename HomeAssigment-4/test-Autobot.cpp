@@ -42,15 +42,25 @@ TEST(Autobot, osOperator)
     out << a;
     EXPECT_EQ("Hello World! I'm Autobot " + a.getName() + "!", out.str());
 }
-TEST(Autobot, lesseqOperator)
+TEST(Autobot, lessOperator)
 {
     Transformer t("bob", 1000, 15, 15, 10);
     Transformer T("paul", 1000, 20, 20, 10);
 
     Autobot a(20, "red", t);
     Autobot A(30, "star", T);
-    EXPECT_TRUE(a <= A);
-    EXPECT_FALSE(A <= a);
+    EXPECT_TRUE(a < A);
+    EXPECT_FALSE(A < a);
+}
+TEST(Autobot, MoreOperator)
+{
+    Transformer t("bob", 1000, 15, 15, 10);
+    Transformer T("paul", 1000, 20, 20, 10);
+
+    Autobot a(20, "red", t);
+    Autobot A(30, "star", T);
+    EXPECT_FALSE(a > A);
+    EXPECT_TRUE(A > a);
 }
 
 

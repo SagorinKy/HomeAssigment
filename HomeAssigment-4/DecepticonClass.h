@@ -20,7 +20,8 @@ public:
     void setRegiment(std::string regiment);
 
     bool isOnWar();
-    bool operator<=(const Decepticon& D);
+    bool operator<(const Decepticon& D);
+    bool operator>(const Decepticon& D);
 
     ~Decepticon();
 };
